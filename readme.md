@@ -15,3 +15,5 @@ To run the script, clone the repository and execute `submission.js`. This runs t
 ## Disclaimer
 
 This submission is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). You can do whatever you want with it as long as attribution is given. I have been granted express permission by the hiring manager to share my submission on the condition that I do not disclose the name of the company.
+
+![CC-BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)
