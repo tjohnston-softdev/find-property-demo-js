@@ -142,3 +142,6 @@ function writeFormatError(errType)
 	
 	return writeRes;
 }
+
+
+module.exports = find;

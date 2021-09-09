@@ -1,4 +1,6 @@
 # Changelog
 
 **./submission.js**
-* Renamed 'collRegex' global to 'dictRegex'
+* Added public module export.
+	* When this file is required, the 'find' function will be made available.
+	* Will be used for unit tests.
