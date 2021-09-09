@@ -1,21 +1,26 @@
 const mocha = require("mocha");
 const chai = require("chai");
 const expect = chai.expect;
+const find = require("../submission");
 
-describe("Parent", function()
+describe("Example Input", function()
 {
-	it("Child 1", function()
+	it("Example 1", function()
 	{
-		expect(true).to.be.true;
+		var retVal = find("firstName=john; lastName=smith; year=1882", "year");
+		expect(retVal).to.equal("1882");
 	});
 	
-	it("Child 2", function()
+	it("Example 2", function()
 	{
-		expect(true).to.be.true;
+		var retVal = find("project=sub2pdf; ver=V3; id=45678", "ver")
+		expect(retVal).to.equal("V3")
 	});
 	
-	it("Child 3", function()
+	it("Example 3", function()
 	{
-		expect(true).to.be.true;
+		var retVal = find("just=one", "one")
+		expect(retVal).to.be.null;
 	});
+	
 });
