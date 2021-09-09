@@ -3,14 +3,11 @@ const targetRegex = /^[a-z0-9-_.$]+$/gi;
 const maxLength = 300;
 const allowedChars = "[a-z A-Z 0-9 - _ . $]";
 
-// Run example cases.
+/*
 var example1 = find("firstName=john; lastName=smith; year=1882", "year");
 var example2 = find("project=sub2pdf; ver=V3; id=45678", "ver");
 var example3 = find("just=one", "one");
-
-// Display results.
-console.log(example1, example2, example3);
-
+*/
 
 // Main function.
 function find(dictionary, targetKey)
