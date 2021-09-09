@@ -1,4 +1,4 @@
-const collRegex = /^([a-z0-9-_.$]+=[a-z0-9-_.$]+;)*([a-z0-9-_.$]+=[a-z0-9-_.$]+(;?))$/gi;
+const dictRegex = /^([a-z0-9-_.$]+=[a-z0-9-_.$]+;)*([a-z0-9-_.$]+=[a-z0-9-_.$]+(;?))$/gi;
 const targetRegex = /^[a-z0-9-_.$]+$/gi;
 const maxLength = 300;
 const allowedChars = "[a-z A-Z 0-9 - _ . $]";
@@ -21,7 +21,7 @@ function find(dictionary, targetKey)
 	prepTarget = readArgument(targetKey, "targetKey");
 	
 	// Validate input text.
-	validateFormat(prepDict, collRegex, 0);
+	validateFormat(prepDict, dictRegex, 0);
 	validateFormat(prepTarget, targetRegex, 1);
 	
 	// Search for 'targetKey' and return corresponding value.
