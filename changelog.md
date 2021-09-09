@@ -1,5 +1,3 @@
 # Changelog
 
-**./submission.js**
-* Removed commented out example calls.
-	* Unit tests have been written since then.
+Snapshot 2021-09-09 14:44
