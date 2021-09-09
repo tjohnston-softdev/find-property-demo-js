@@ -1,5 +1,5 @@
 # Changelog
 
-**./test/index.js**
-* Required file: '../submission'
-* Wrote unit tests for example input
+**./submission.js**
+* Removed commented out example calls.
+	* Unit tests have been written since then.
