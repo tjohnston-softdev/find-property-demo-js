@@ -1,7 +1,5 @@
 # Find Property Demo (JavaScript)
 
-## Introduction
-
 This is my submission for a technical assessment offered to shortlisted candidates for one of the software development positions I interviewed for. The basic objective was to implement a Node JS function which searches for a given property in a key-value collection string.
 
 Assessment instructions were sent as a PDF. I reinterpreted it as a [markdown file](./instructions.md) for public viewing.
