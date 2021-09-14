@@ -3,6 +3,8 @@ const chai = require("chai");
 const expect = chai.expect;
 const find = require("../submission");
 
+/* Begin unit tests */
+
 describe("Example Input", function()
 {
 	it("Example 1", function()
@@ -126,9 +128,11 @@ describe("Invalid Contents", function()
 });
 
 
+/* End unit tests */
 
 
 
+// Performs unit test for invalid function call.
 function handleInvalidTest(dictArg, keyArg, desiredText, useExactQuote)
 {
 	var correctString = false;
@@ -137,11 +141,13 @@ function handleInvalidTest(dictArg, keyArg, desiredText, useExactQuote)
 	
 	try
 	{
+		// Attempt function - Must not be successful.
 		find(dictArg, keyArg);
 		resultFlag = -1;
 	}
 	catch(findErr)
 	{
+		// Caught error safely - Check if messages match.
 		correctString = findErr.message.startsWith(desiredText);
 		resultFlag = Number(correctString);
 		flaggedText = findErr.message;
@@ -149,39 +155,47 @@ function handleInvalidTest(dictArg, keyArg, desiredText, useExactQuote)
 	
 	if (resultFlag > 0)
 	{
+		// Error string valid.
 		expect(true).to.be.true;
 	}
 	else if (resultFlag === 0)
 	{
+		// Wrong error caught.
 		displayWrongError(desiredText, flaggedText, useExactQuote);
 	}
 	else
 	{
+		// No error caught.
 		throw new Error("Function call was not supposed to be successful. An error should had been thrown.");
 	}
 	
 }
 
 
+// Writes failure text for incorrect error caught.
 function displayWrongError(expectMsg, actualMsg, exactQuote)
 {
 	var prepText = "";
 	var ellipsis = "";
 	
+	// Add ellipsis dots to expected error message if need be.
 	if (exactQuote === true)
 	{
 		ellipsis = " [...]";
 	}
 	
+	// Write text line-by-line.
 	prepText += "Incorrect error message.\r\n";
 	prepText += ["Expected: '", expectMsg, "'", ellipsis, "\r\n"].join("");
 	prepText += ["Actual: '", actualMsg, "'"].join("");
 	
+	// Display.
 	throw new Error(prepText);
 }
 
 
 
+// Writes really long string for character limit unit test.
 function writeLongString()
 {
 	var longRes = "";
