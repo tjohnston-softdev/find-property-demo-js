@@ -25,8 +25,31 @@ describe("Example Input", function()
 	
 });
 
+describe("Invalid Arguments", function()
+{
+	it("Type", function()
+	{
+		handleInvalidTest(null, "xyz", "dictionary must be a valid, non-empty string.", true);
+	});
+	
+	it("Empty", function()
+	{
+		handleInvalidTest("xyz", "", "targetKey must be a valid, non-empty string.", true);
+	});
+	
+	it("Length", function()
+	{
+		var longString = writeLongString();
+		handleInvalidTest(longString, null, "dictionary string is too long.", true);
+	});
+	
+});
 
-function handleInvalidTest(dictArg, keyArg, desiredText)
+
+
+
+
+function handleInvalidTest(dictArg, keyArg, desiredText, useExactQuote)
 {
 	var correctString = false;
 	var resultFlag = -1;
@@ -50,7 +73,7 @@ function handleInvalidTest(dictArg, keyArg, desiredText)
 	}
 	else if (resultFlag === 0)
 	{
-		displayWrongError(desiredText, flaggedText);
+		displayWrongError(desiredText, flaggedText, useExactQuote);
 	}
 	else
 	{
@@ -60,13 +83,39 @@ function handleInvalidTest(dictArg, keyArg, desiredText)
 }
 
 
-function displayWrongError(expectMsg, actualMsg)
+function displayWrongError(expectMsg, actualMsg, exactQuote)
 {
 	var prepText = "";
+	var ellipsis = "";
+	
+	if (exactQuote === true)
+	{
+		ellipsis = " [...]";
+	}
 	
 	prepText += "Incorrect error message.\r\n";
-	prepText = ["Expected: '", expectMsg, "'\r\n"].join("");
+	prepText = ["Expected: '", expectMsg, "'", ellipsis, "\r\n"].join("");
 	prepText = ["Actual: '", actualMsg, "'"].join("");
 	
 	throw new Error(prepText);
+}
+
+
+
+function writeLongString()
+{
+	var longRes = "";
+	
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	longRes += "the quick brown fox jumps over the lazy dog";
+	
+	return longRes;
 }
