@@ -1,5 +1,6 @@
 # Changelog
 
-**./test/index.js - displayWrongError**
-* Ellipsis dots will now be applied to the failure text correctly.
-	* Will not be used on exact quotes.
+**./readme.md**
+* Release date for unit tests.
+* Re-wrote 'running' instructions.
+* "on the condition" --> "on the basis"
