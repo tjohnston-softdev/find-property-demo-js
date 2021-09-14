@@ -26,7 +26,7 @@ describe("Example Input", function()
 });
 
 
-describe("Valid Contents", function()
+describe("Valid Rules", function()
 {
 	it("Leading Whitespace", function()
 	{
