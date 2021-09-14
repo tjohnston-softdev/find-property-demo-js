@@ -46,6 +46,43 @@ describe("Invalid Arguments", function()
 });
 
 
+describe("Invalid Contents", function()
+{
+	var commonErr = "Invalid 'dictionary' contents.";
+	
+	it("Whitespace", function()
+	{
+		handleInvalidTest("      ", "xyz", commonErr, false);
+	});
+	
+	it("Invalid characters", function()
+	{
+		handleInvalidTest("correct=text;", "!@#$%^&*", "Invalid 'targetKey' contents.", false);
+	});
+	
+	it("Missing Property", function()
+	{
+		handleInvalidTest("=noprop;included=true;", "xyz", commonErr, false);
+	});
+	
+	it("Missing Value", function()
+	{
+		handleInvalidTest("novalue=;included=true;", "xyz", commonErr, false);
+	});
+	
+	it("Missing Equals", function()
+	{
+		handleInvalidTest("name:john;included=true;", "xyz", commonErr, false);
+	});
+	
+	it("Missing Semicolon", function()
+	{
+		handleInvalidTest("semicolons=bad:included=true;", "xyz", commonErr, false);
+	});
+	
+});
+
+
 
 
 
@@ -94,8 +131,8 @@ function displayWrongError(expectMsg, actualMsg, exactQuote)
 	}
 	
 	prepText += "Incorrect error message.\r\n";
-	prepText = ["Expected: '", expectMsg, "'", ellipsis, "\r\n"].join("");
-	prepText = ["Actual: '", actualMsg, "'"].join("");
+	prepText += ["Expected: '", expectMsg, "'", ellipsis, "\r\n"].join("");
+	prepText += ["Actual: '", actualMsg, "'"].join("");
 	
 	throw new Error(prepText);
 }
