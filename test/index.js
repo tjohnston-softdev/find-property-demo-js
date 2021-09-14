@@ -25,6 +25,49 @@ describe("Example Input", function()
 	
 });
 
+
+describe("Valid Contents", function()
+{
+	it("Leading Whitespace", function()
+	{
+		var retVal = find("     whitespace=true;     ", "trim");
+		expect(retVal).to.be.null;
+	});
+	
+	it("Content Whitespace", function()
+	{
+		var retVal = find("Full Name = John Smith; included=true;", "FullName");
+		expect(retVal).to.equal("JohnSmith");
+	});
+	
+	it("Optional Space Between Properties", function()
+	{
+		var spaceIncluded = find("id=123; firstName=Bret;", "id");
+		var spaceIgnored = find("lastName=Foucar;gender=M;", "gender");
+		
+		expect(spaceIncluded).to.equal("123");
+		expect(spaceIgnored).to.equal("M");
+	});
+	
+	it("Last Semicolon Optional", function()
+	{
+		var semicolonIncluded = find("user=bfoucar2; age=28", "age");
+		var semicolonIgnored = find("user=cglyne0; age=34;", "user");
+		
+		expect(semicolonIncluded).to.equal("28");
+		expect(semicolonIgnored).to.equal("cglyne0");
+	});
+	
+	it("Missing Property", function()
+	{
+		var retVal = find("animal=cat; noise=meow", "speed");
+		expect(retVal).to.be.null;
+	});
+	
+});
+
+
+
 describe("Invalid Arguments", function()
 {
 	it("Type", function()
@@ -50,7 +93,7 @@ describe("Invalid Contents", function()
 {
 	var commonErr = "Invalid 'dictionary' contents.";
 	
-	it("Whitespace", function()
+	it("Whitespace Only", function()
 	{
 		handleInvalidTest("      ", "xyz", commonErr, false);
 	});
