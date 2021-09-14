@@ -179,7 +179,7 @@ function displayWrongError(expectMsg, actualMsg, exactQuote)
 	var ellipsis = "";
 	
 	// Add ellipsis dots to expected error message if need be.
-	if (exactQuote === true)
+	if (exactQuote !== true)
 	{
 		ellipsis = " [...]";
 	}
