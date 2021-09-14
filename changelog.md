@@ -1,3 +1,4 @@
 # Changelog
 
-Unit tests complete.
+* Added unit tests.
+* Minor changes to readme.
