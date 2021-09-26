@@ -1,4 +1,3 @@
 # Changelog
 
-* Added final release date.
-* Noted implementation details.
+Final version complete.
