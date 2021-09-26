@@ -2,9 +2,9 @@
 
 This is my submission for a technical assessment offered to shortlisted candidates for one of the software development positions I interviewed for. The basic objective was to implement a Node JS function which searches for a given property in a key-value collection string.
 
-Assessment instructions were sent as a PDF. I reinterpreted it as a [markdown file](./instructions.md) for public viewing.
+Assessment instructions were sent as a PDF. I reinterpreted it as a [markdown file](./instructions.md) for public viewing. This also includes the implementation details and any personal assumptions.
 
-The assessment was undertaken on 4 September 2021 and shared publicly on 7 September. An updated version with unit tests was released on 14 September.
+The assessment was undertaken on 4 September 2021 and shared publicly on 7 September. An updated version with unit tests was released on 14 September with the final version released on 26 September.
 
 ## Running
 
