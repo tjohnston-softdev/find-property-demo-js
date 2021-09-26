@@ -1,3 +1,3 @@
 # Changelog
 
-Opened 'final' branch.
+Wrote unit test for duplicate keys.

@@ -66,6 +66,12 @@ describe("Valid Rules", function()
 		expect(retVal).to.be.null;
 	});
 	
+	it("Duplicate Keys", function()
+	{
+		var retVal = find("data=one; data=two; data=three", "data");
+		expect(retVal).to.equal("one");
+	});
+	
 });
 
 
