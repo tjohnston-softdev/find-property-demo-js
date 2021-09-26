@@ -37,3 +37,18 @@ find("just=one", "one");
 * Use comments as needed to explain your solution.
 * If you choose to copy significant amounts of code from an online source, put a comment in your code citing the original URL.
 * You will not be penalised if your function throws an error due to incorrect argument types. (eg. Numbers instead of strings)
+
+---
+
+# Implementation Details
+
+* Input validation rules:
+	* Both arguments must be non-empty strings with 300 characters or less.
+	* Both keys and values can only contain: [a-z A-Z 0-9 - _ . $]
+	* Keys and values are separated by the equals sign, and are case-sensitive.
+	* Keys with empty values are not allowed.
+	* Individual key-value properties are separated with a semicolon, the final being optional.
+	* Whitespace is ignored but it still counts against the character limit.
+	* Duplicate keys are allowed but they are ignored. The first one takes priority.
+* Custom errors are thrown for different invalid input cases.
+* Although the submission does not use any 3rd-party libraries, installing [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/) was necessary to implement unit testing for the public release.

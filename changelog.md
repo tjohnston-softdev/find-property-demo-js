@@ -1,3 +1,3 @@
 # Changelog
 
-Removed 'ie' from assessment instructions.
+Wrote implementation details.
