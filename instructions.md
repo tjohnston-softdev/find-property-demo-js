@@ -4,7 +4,7 @@
 
 Using Node JS, implement a function called 'find' that takes two string arguments: 'dictionary' and 'targetKey'.
 
-'dictionary' is a string representing a list of key-value pairs where each pair is separated by a semicolon and a space (ie. "; "). Properties and values are separated by the equals symbol (ie. "=")
+'dictionary' is a string representing a list of key-value pairs where each pair is separated by a semicolon and a space ("; "). Properties and values are separated by the equals symbol ("=")
 
 'targetKey' is an alphanumeric sequence of characters representing a property name that may or may not exist in 'dictionary'.
 
